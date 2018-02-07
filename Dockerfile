@@ -30,7 +30,6 @@ RUN \
 
 RUN pip install flask
 RUN pip install requests
-RUN pip install pypinyin
 
 # Environment variables
 
