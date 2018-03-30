@@ -2,6 +2,8 @@ FROM python:2.7
 
 MAINTAINER Jennifer Liao <cutejaneii@hotmail.com>
 
+ENV HADOOP_USER_NAME=pbxuser
+
 RUN \
   pip install wget && \
   wget https://downloads.lightbend.com/scala/2.11.11/scala-2.11.11.tgz && \
@@ -38,7 +40,7 @@ ENV JAVA_HOME=/usr/local/jre \
     PATH=$PATH:$SPARK_HOME:$SPARK_HOME/bin:$SPARK_HOME/python:$JAVA_HOME/bin \
     JRE_HOME=/usr/local/jdk/jre \
     CLASSPATH=$CLASSPATH:.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib \
-    HADOOP_USER_NAME=pbxuser
+    HADOOP_USER_NAME=$HADOOP_USER_NAME
 
 ENV PYTHONPATH=$PYTHONPATH:$SPARK_HOME:$SPARK_HOME/bin:$SPARK_HOME/python
 
